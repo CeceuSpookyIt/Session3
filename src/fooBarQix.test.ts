@@ -37,16 +37,16 @@ describe("", () => {
     expect(_sut.FooMyNumber(7)).toBe("QixQix");
   });
 
-  it("Should return Bar when called with 10", () => {
-    expect(_sut.FooMyNumber(10)).toBe("Bar");
+  it("Should return Bar* when called with 10", () => {
+    expect(_sut.FooMyNumber(10)).toBe("Bar*");
   });
 
   it("Should return FooBarBar when called with 15", () => {
     expect(_sut.FooMyNumber(15)).toBe("FooBarBar");
   });
 
-  it("Should return Bar when called with 20", () => {
-    expect(_sut.FooMyNumber(20)).toBe("Bar");
+  it("Should return Bar* when called with 20", () => {
+    expect(_sut.FooMyNumber(20)).toBe("Bar*");
   });
 
   it("Should return FooQix when called with 21", () => {
@@ -67,5 +67,24 @@ describe("", () => {
   it("Should return FooQix when called with 27", () => {
     expect(_sut.FooMyNumber(27)).toBe("FooQix");
   });
- 
+
+  it("Should return BarQixFooBar when called with 35", () => {
+    expect(_sut.FooMyNumber(35)).toBe("BarQixFooBar");
+  });
+
+  it("Should return BarFooFooFooBar when called with 3335", () => {
+    expect(_sut.FooMyNumber(3335)).toBe("BarFooFooFooBar");
+  });
+
+  it("Should return BarFooFooBarFooBar when called with 332535", () => {
+    expect(_sut.FooMyNumber(332535)).toBe("FooBarQixFooFooBarFooBar");
+  });
+
+  it("Should return FooBarQix*Bar when called with 105", () => {
+    expect(_sut.FooMyNumber(105)).toBe("FooBarQix*Bar");
+  });
+  
+  it("Should return * when called with 101", () => {
+    expect(_sut.FooMyNumber(101)).toBe("*");
+  });
 });

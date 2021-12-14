@@ -1,36 +1,44 @@
 export class FooBarQix {
+
   FooMyNumber(numero: number): string {
-    // let Div3: number
     let char: string = "";
+
+    const puras = [
+      {
+        num: 0,
+        text: "*"
+      },
+      {
+        num : 3,
+        text : "Foo"
+      }, 
+      {
+        num: 5,
+        text: "Bar"
+      }, 
+      {
+        num: 7 ,
+        text:  "Qix"
+      }
+    ];
     
-  
-    if (numero % 3 === 0) {
-      char = "Foo"
+    puras.forEach(pura => {
+      if (numero % pura.num === 0) {
+        char = char + pura.text;
+      }
+    });
+   
+    const numeros = numero.toString();
+
+    for(let numeroDePosicao of numeros) {
+      for(let pura of puras) {
+        if (numeroDePosicao === pura.num.toString()) {
+          char = char + pura.text;
+          break;
+        }
+      }
     }
-    if (numero % 5 === 0) {
-      char = char + "Bar";
-    } 
-    if (numero % 7 === 0) {
-      char = char + "Qix";
-    }
-  if (numero === 3) {
-      return char + "Foo";
-    }
-    if (numero === 5) {
-      return char + "Bar";
-    }
-    if (numero === 7) {
-      return char + "Qix";
-    }
-    if (numero === 15) {
-      return char + "Bar";
-    }
-    if (numero === 27) {
-      return char + "Qix";
-    }
-    if (numero === 33) {
-      return char + "FooFoo";
-    }
+   
     if (char === "") {
       return numero.toString();
     }
